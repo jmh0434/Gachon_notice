@@ -1,0 +1,2495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!--아이패드일때-->
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="text/javascript" http-equiv="Content-Script-Type"/>
+  <meta content="text/css" http-equiv="Content-Style-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=990px, initial-scale=1.0, maximum-scale=1.0, minimum-scale=-1.0, user-scalable=yes" name="viewport"/>
+  <title>
+   공지사항 |  가천대학교
+  </title>
+  <link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/skin/board/board.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/community.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   /* 파이어폭스 웹 브라우저 */
+@-moz-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+/* 인터넷 익스플로러 웹 브라우저 */
+@-ms-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+/* 기타 웹 브라우저 */
+@keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.blink-image {
+    -moz-animation: blink normal 1s infinite ease-in-out;
+    -webkit-animation: blink normal 1s infinite ease-in-out;
+    -ms-animation: blink normal 1s infinite ease-in-out;
+    animation: blink normal 1s infinite ease-in-out;
+}
+  </style>
+  <link href="/css/tikslusbox.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/CheckUtil.js" type="text/javascript">
+  </script>
+  <script src="/js/default.js" type="text/javascript">
+  </script>
+  <script src="/js/tagCalendar.js" type="text/javascript">
+  </script>
+  <script src="/js/common.js" type="text/javascript">
+  </script>
+  <script charset="utf-8" src="/SmartEditor/js/HuskyEZCreator.js" type="text/javascript">
+  </script>
+  <link href="/images/url.ico" rel="shortcut icon"/>
+  <!--//favicon-->
+  <script src="/js/jquery-1.4.2.js" type="text/javascript">
+  </script>
+  <!--//메인컨텐츠-->
+  <script src="/js/gnb.js" type="text/javascript">
+  </script>
+  <script src="/search/common/js/search.js" type="text/javascript">
+  </script>
+  <!--//검색 스크립트-->
+  <script src="/js/tikslusbox.js" type="text/javascript">
+  </script>
+  <script src="/js/bowser.js" type="text/javascript">
+  </script>
+  <script src="/js/otp.js" type="text/javascript">
+  </script>
+  <!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/css/ie6.css">
+<![endif]-->
+  <!--[if lte IE 6]>
+<script type="text/javascript">
+
+function setPng24(obj) {
+obj.width=obj.height=1;
+obj.className=obj.className.replace(/\bpng24\b/i,'');
+obj.style.filter =
+"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');"
+obj.src=''; 
+return '';
+}
+</script>
+
+<![endif]-->
+  <script type="text/javascript">
+   function home_manual(){
+	
+		var w = 1100;
+		var h = 800;
+		var window_left = (screen.width-w)/2;
+		var window_top = (screen.height-h)/2;	
+		var add_data_win = window.open('http://www.1step.co.kr/bbs_shop/list.htm?board_code=manual','add_data_win','top='+window_top+',left='+window_left+',width='+w+',height='+h+',toolbar=no,scrollbars=yes,resizable=yes,status=yes,menubar=no,location=no');
+		add_data_win.focus();
+	}
+
+	//-----검색 요청-----
+	function DQsearchAction()
+	{
+		var f = document.searchForm;
+		if(f.searchTerm.value == "")
+		{
+			alert("검색어를 입력하세요.");
+			f.searchTerm.focus();
+			return false;
+		}
+		//기간에 값이 있을 경우 필터링
+	    if (f.search_sdate.value != "" && f.search_edate.value != "") 
+		{
+			if (f.search_edate.value < f.search_sdate.value)
+			{
+				alert("시작일은 끝날짜 보다 클 수 없습니다.");
+				f.search_edate.select();
+				return;
+			}
+		}     
+		f.submit();
+	}
+
+	function DQsearchAction2()
+	{
+		var f = document.topSearchForm;
+		if(f.searchTerm.value == "")
+		{
+			alert("검색어를 입력하세요.");
+			f.searchTerm.focus();
+			return false;
+		}
+		return true;
+	}
+  </script>
+ </head>
+ <body>
+  <div class="wrap_box">
+   <div id="wrap">
+    <div id="accessibility">
+     <ul>
+      <li>
+       <a href="#gnb">
+        주메뉴바로가기
+       </a>
+      </li>
+      <li>
+       <a href="#snb">
+        서브메뉴바로가기
+       </a>
+      </li>
+      <li>
+       <a href="#container">
+        본문내용바로가기
+       </a>
+      </li>
+      <li>
+       <a href="#footer">
+        바닥글바로가기
+       </a>
+      </li>
+     </ul>
+    </div>
+    <!--//accessibility-->
+    <noscript>
+     <div class="noscript">
+      스크립트 동작이 활성화 되지 않아 일부기능이 원활하게 동작하지 않을 수 있습니다.
+     </div>
+    </noscript>
+    <noscript>
+     <div class="nognb">
+      <dl class="nognb1">
+       <dt>
+        <span>
+         대학소개
+        </span>
+       </dt>
+       <dd>
+        <a href="/introduce/chairman/01.jsp">
+         총장실
+        </a>
+       </dd>
+       <dd>
+        <a href="/introduce/gachon/01.jsp">
+         대학안내
+        </a>
+       </dd>
+       <dd>
+        <a href="/introduce/foundation/01.jsp">
+         학교재단
+        </a>
+       </dd>
+       <dd>
+        <a href="/introduce/university/01.jsp">
+         대학조직
+        </a>
+       </dd>
+       <dd>
+        <a href="/introduce/cyber/01.jsp?boardType_seq=336">
+         사이버홍보실
+        </a>
+       </dd>
+       <dd>
+        <a href="/introduce/campus/01.jsp">
+         캠퍼스안내
+        </a>
+       </dd>
+      </dl>
+      <dl class="nognb2">
+       <dt>
+        <span>
+         입학
+        </span>
+       </dt>
+       <dd>
+        <a href="http://admission.gachon.ac.kr/kyungwon/" target="_blank" title="새창으로열림">
+         글로벌캠퍼스
+        </a>
+       </dd>
+       <dd>
+        <a href="http://ipsi.gachon.ac.kr" target="_blank" title="새창으로열림">
+         메디컬캠퍼스
+        </a>
+       </dd>
+      </dl>
+      <dl class="nognb3">
+       <dt>
+        <span>
+         대학 대학원
+        </span>
+       </dt>
+       <dd>
+        <a href="/university/college/college_intro.jsp">
+         [대학] 글로벌캠퍼스
+        </a>
+       </dd>
+       <dd>
+        <a href="/university/college_ic/college_intro.jsp">
+         [대학] 메디컬캠퍼스
+        </a>
+       </dd>
+       <dd>
+        <a href="/university/postgraduate/general_intro.jsp">
+         [대학원] 글로벌캠퍼스
+        </a>
+       </dd>
+       <dd>
+        <a href="/university/postgraduate_ic/general_intro.jsp">
+         [대학원] 메디컬캠퍼스
+        </a>
+       </dd>
+      </dl>
+      <dl class="nognb4">
+       <dt>
+        <span>
+         연구 산학
+        </span>
+       </dt>
+       <dd>
+        <a href="/research/laboratory/01.jsp">
+         연구처/산학협력단 소개
+        </a>
+       </dd>
+       <dd>
+        <a href="/research/center/01.jsp">
+         연구소안내
+        </a>
+       </dd>
+       <dd>
+        <a href="/research/support/01.jsp?boardType_seq=461">
+         교내연구지원
+        </a>
+       </dd>
+       <dd>
+        <a href="/research/notice/01.jsp?boardType_seq=462">
+         공지사항
+        </a>
+       </dd>
+       <dd>
+        <a href="/research/morgue/01.jsp?boardType_seq=465">
+         자료실
+        </a>
+       </dd>
+       <dd>
+        <a href="https://gcusanhak.gachon.ac.kr/sso/main.jsp" target="_blank" title="새창으로열림">
+         산단통합관리시스템
+        </a>
+       </dd>
+      </dl>
+      <dl class="nognb5">
+       <dt>
+        <span>
+         학사안내
+        </span>
+       </dt>
+       <dd>
+        <a href="/affairs/info/01.jsp?boardType_seq=340">
+         학사정보
+        </a>
+       </dd>
+       <dd>
+        <a href="/affairs/scholar/01.jsp">
+         장학
+        </a>
+       </dd>
+       <dd>
+        <a href="http://job.kyungwon.ac.kr/" target="_blank" title="새창열림">
+         취업
+        </a>
+       </dd>
+       <dd>
+        <a href="/affairs/military/01.jsp">
+         병무
+        </a>
+       </dd>
+       <dd>
+        <a href="/affairs/exchange/01.jsp">
+         국제교류
+        </a>
+       </dd>
+       <dd>
+        <a href="/affairs/remote/01.jsp">
+         원격강의
+        </a>
+       </dd>
+      </dl>
+      <dl class="nognb6">
+       <dt>
+        <span>
+         학사행정
+        </span>
+       </dt>
+       <dd>
+        <a href="http://gcis.gachon.ac.kr/sso/login.jsp" target="_blank" title="새창열림">
+         학사행정
+        </a>
+       </dd>
+      </dl>
+      <dl class="nognb7">
+       <dt>
+        <span>
+         커뮤니티
+        </span>
+       </dt>
+       <dd>
+        <a href="/community/homepage/01.jsp">
+         홈페이지광장
+        </a>
+       </dd>
+       <dd>
+        <a href="/community/opencampus/03.jsp?boardType_seq=358">
+         열린캠퍼스
+        </a>
+       </dd>
+       <dd>
+        <a href="/community/counsel/01.jsp">
+         학생상담
+        </a>
+       </dd>
+       <dd>
+        <a href="/community/life/01.jsp">
+         커뮤니티
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <!--//nognb-->
+    </noscript>
+    <hr/>
+    <div id="header">
+     <h1>
+      <a href="/">
+       <img alt="가천대학교" src="/images/common/h1_logo.png"/>
+      </a>
+     </h1>
+     <div class="lnb">
+      <ul>
+       <li>
+        <a href="/main.jsp">
+         <img alt="HOME" class="png24" src="/images/common/lnb01.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="/faq">
+         <img alt="IT서비스" class="png24" src="/images/common/lnb02_new.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="https://www.gachon.ac.kr/exsignon/sso/sso_index.jsp">
+         <!--a href="/main.jsp" onclick="alert(' ● 이용에 불편을 드려 죄송합니다.\n sso장애로 인한 오류로 복구 중 입니다.\n 빠른시간내에 복구를 완료하도록 노력하겠습니다.')"-->
+         <img alt="로그인" class="png24" src="/images/common/lnb03.png"/>
+        </a>
+       </li>
+       <!--li><a href="/site/join.jsp" onclick="alert('● 2012학년도 수시 및 정시 합격생  회원가입 : 2.24(금) 09:00 이후\n\n● 2012학년도 편입학생 회원가입 가능\n\n학교 홈페이지에서 학생신분으로 회원가입을 하실 수 있습니다.\n※일반회원으로 가입하지 마시고 반드시 학생회원으로 가입 바랍니다.\n(웹메일, 이클래스, 카페, 웹하드 등 사용가능)')"><img src="/images/common/lnb04.png"  alt="회원가입" class="png24"  /></a></li-->
+       <li>
+        <a href="/site/join_nice.jsp" onclick="alert('아래 기간 이후 홈페이지 회원 가입이 가능합니다.\n\n■ 신입생 : 2021.02.23.(화), 16:00【1차】\n               2021.02.28(일), 22:00【2차】\n\n■ 편입생 : 2021.02.19.(금), 16:00 \n\n● 본인인증이 안되거나 외국인의 경우, 인증방법 선택시 「신입생(인증 불가한 경우) 또는 외국인(foreigner)」을 선택하시기 바랍니다. \n\n● 사이버캠퍼스, 클라우드메일 등 사용가능');">
+         <img alt="회원가입" class="png24" src="/images/common/lnb04.png"/>
+        </a>
+       </li>
+       <!--li><a href="/site/join.jsp" onclick="alert(' (일반회원으로 가입한 학생은 탈퇴후 재가입 바랍니다)\n\n ● 웹메일, 이클래스, 카페, 웹하드 등 사용가능')"><img src="/images/common/lnb04.png"  alt="회원가입" class="png24"  /></a></li-->
+       <li>
+        <a href="/site/site.jsp">
+         <img alt="사이트맵" class="png24" src="/images/common/lnb05.png"/>
+        </a>
+       </li>
+       <li class="site">
+        <a href="/english" target="_blank" title="새창열림">
+         <img alt="영문사이트바로가기" class="png24" src="/images/common/btn_eng.png"/>
+        </a>
+       </li>
+       <li>
+        <a href="/china" target="_blank" title="새창열림">
+         <img alt="중문사이트바로가기" class="png24" src="/images/common/btn_cha.png"/>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <!--//lnb-->
+     <form action="/search/search.jsp" id="topSearchForm" method="post" name="topSearchForm" onsubmit="return DQsearchAction2();">
+      <input name="OfficerWhereSet" type="hidden"/>
+      <input name="IntroduceWhereSet" type="hidden"/>
+      <input name="NoticeWhereSet" type="hidden"/>
+      <input name="UniversityWhereSet" type="hidden"/>
+      <input name="ResearchWhereSet" type="hidden"/>
+      <input name="AffairsWhereSet" type="hidden"/>
+      <input name="CommunityWhereSet" type="hidden"/>
+      <div id="search">
+       <fieldset>
+        <legend>
+         통합검색
+        </legend>
+        <label for="searchTerm">
+         <img alt="search" src="/images/common/search.gif"/>
+        </label>
+        <input autocomplete="off" class="ip" id="searchTerm" name="searchTerm" type="text"/>
+        <input alt="검색" class="image" src="/images/common/btn_search.gif" type="image"/>
+       </fieldset>
+      </div>
+      <!--//search-->
+     </form>
+     <div id="gnb">
+      <h2 class="hide">
+       주메뉴입니다.
+      </h2>
+      <div class="head">
+       <ul class="gnb">
+        <li class="gnb1">
+         <a class="d1" href="/introduce/chairman/01.jsp">
+          <img alt="대학소개" class="png24" src="/images/gnb/gnb01_off.png"/>
+         </a>
+         <div class="gnbsub">
+          <div class="inner">
+           <dl>
+            <dt>
+             <a href="/introduce/chairman/01.jsp">
+              <img alt="총장실" src="/images/gnb/intro_gnb01.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/introduce/chairman/01.jsp">
+              총장메시지
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/chairman/02.jsp">
+              약력·경력
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/chairman/03.jsp?boardType_seq=321">
+              포토갤러리
+             </a>
+            </dd>
+            <!--<dd><a href="/introduce/chairman/04.jsp?boardType_seq=323">메세지함</a></dd>-->
+           </dl>
+           <dl>
+            <dt>
+             <a href="/introduce/gachon/01_01.jsp">
+              <img alt="대학안내" src="/images/gnb/intro_gnb02.gif"/>
+             </a>
+            </dt>
+            <!--<dd><a href="/introduce/gachon/01.jsp">대학안내</a></dd>-->
+            <dd>
+             <a href="/introduce/gachon/01.jsp">
+              건학이념
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/12.jsp">
+              교가
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/04_04.jsp">
+              학교연혁
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/06.jsp">
+              학교상징
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/02.jsp">
+              비전
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/03.jsp">
+              목표와전략
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/16.jsp?boardType_seq=786">
+              대학혁신지원사업
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/05.jsp">
+              규정집
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/14.jsp">
+              특성화 추진전략
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/09.jsp?boardType_seq=521">
+              대학자체평가
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/11_1_1.jsp?boardType_seq=743">
+              대학주요회의내용
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/07_01.jsp">
+              자매결연대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/gachon/08.jsp">
+              대학발전기금안내
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/introduce/foundation/01.jsp">
+              <img alt="학교재단 " src="/images/gnb/intro_gnb03.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/introduce/foundation/01.jsp">
+              이사장인사말
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/foundation/02.jsp">
+              재단소개
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/foundation/03.jsp?boardType_seq=324">
+              재무제표
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/foundation/04.jsp">
+              임원현황
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/foundation/05.jsp?boardType_seq=325">
+              가천학원회의록
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/foundation/06.jsp">
+              기부금모금
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/introduce/university/01.jsp">
+              <img alt="대학조직" src="/images/gnb/intro_gnb04.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/introduce/university/01.jsp">
+              대학기구표
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/university/02.jsp">
+              부총장
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/university/03_01.jsp">
+              대학본부[글로벌]
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/university/031_01.jsp">
+              대학본부[메디컬]
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/university/04.jsp">
+              교내전화번호
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/university/05_01.jsp">
+              부속기관[글로벌]
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/university/06.jsp">
+              부속기관[메디컬]
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/introduce/cyber/01.jsp?boardType_seq=336">
+              <img alt="사이버홍보실" src="/images/gnb/intro_gnb05.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/introduce/cyber/01.jsp?boardType_seq=336">
+              가천포토
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/cyber/10.jsp">
+              히스토리포토
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/cyber/02.jsp?boardType_seq=337">
+              홍보영상
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/cyber/11.jsp?boardType_seq=784">
+              홍보사진
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/cyber/03.jsp?boardType_seq=668">
+              홍보브로슈어
+             </a>
+            </dd>
+            <dd>
+             <a href="/introduce/cyber/08_01.jsp">
+              자랑스런 가천 동문
+             </a>
+            </dd>
+            <!--dd><a href="/introduce/cyber/09.jsp?boardType_seq=677">자랑스런 가천<br>대학원 동문</a></dd-->
+            <!--dd><a href="/introduce/cyber/04.jsp?boardType_seq=338">교내행사동영상</a></dd>
+									<dd><a href="/introduce/cyber/05.jsp">가천UI</a></dd>
+									<dd><a href="/introduce/cyber/06.jsp?boardType_seq=339">보도자료</a></dd>-->
+           </dl>
+           <dl>
+            <dt>
+             <a href="/introduce/campus/01.jsp">
+              <img alt="캠퍼스안내" src="/images/gnb/intro_gnb06.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/introduce/campus/01.jsp">
+              캠퍼스맵
+             </a>
+            </dd>
+            <!--<dd><a href="/introduce/campus/02.jsp">메디컬캠퍼스투어</a></dd>
+									<dd><a href="/introduce/campus/03.jsp">가천강화연수원투어</a></dd>-->
+            <dd>
+             <a href="/introduce/campus/04.jsp">
+              오시는길
+             </a>
+            </dd>
+           </dl>
+          </div>
+         </div>
+        </li>
+        <li class="gnb2">
+         <a class="d1" href="https://admission.gachon.ac.kr/gachon/" target="_blank" title="새창으로열림">
+          <img alt="입학" class="png24" src="/images/gnb/gnb02_off.png"/>
+         </a>
+         <!--div class="gnbsub">
+						<div class="inner">
+							<dl>
+								<dt><a href="http://admission.gachon.ac.kr/gachon/" target="_blank" title="새창으로열림"><img src="/images/gnb/admission_gnb01.gif"  alt="글로벌캠퍼스" /></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="http://ipsi.gachon.ac.kr/" target="_blank" title="메디컬캠퍼스"><img src="/images/gnb/admission_gnb02.gif"  alt="메디컬캠퍼스" /></a></dt>
+							</dl>
+						</div>
+                    </div-->
+        </li>
+        <li class="gnb3">
+         <a class="d1" href="/university/college/college_intro.jsp">
+          <img alt="대학 대학원" class="png24" src="/images/gnb/gnb03_off.png"/>
+         </a>
+         <div class="gnbsub">
+          <div class="inner">
+           <dl>
+            <dt>
+             <a href="/university/college/college_intro.jsp">
+              <img alt="(대학)글로벌캠퍼스" src="/images/gnb/uni_gnb01.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/university/college/culture_intro.jsp">
+              가천리버럴아츠칼리지
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/business1_intro.jsp ">
+              경영대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/socialscience_intro.jsp ">
+              사회과학대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/civilization_intro.jsp">
+              인문대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/law_intro.jsp">
+              법과대학
+             </a>
+            </dd>
+            <!--dd><a href="/university/college/archi_intro.jsp ">건축대학</a></dd-->
+            <dd>
+             <a href="/university/college/engineering_intro.jsp ">
+              공과대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/bionano_intro.jsp ">
+              바이오나노대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/it_intro.jsp ">
+              IT융합대학
+             </a>
+            </dd>
+            <!--dd><a href="/university/college/natural_intro.jsp">자연과학대학</a></dd-->
+            <dd>
+             <a href="/university/college/koreanmedicine_intro.jsp">
+              한의과대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/art_intro.jsp ">
+              예술·체육대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/cfi_intro.jsp ">
+              미래산업대학
+             </a>
+            </dd>
+            <!--dd><a href="/university/college/music_intro.jsp ">음악대학</a></dd-->
+            <!--dd><a href="/university/college/domesticscience_intro.jsp ">생활과학대학</a></dd-->
+            <dd>
+             <img alt="경계분할" src="/images/gnb/line.png"/>
+             .
+            </dd>
+            <dd>
+             <a href="/university/college/19_1.jsp">
+              특성화사업
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college/18_1.jsp">
+              특성화사업단
+             </a>
+            </dd>
+           </dl>
+           <!--dl style="width:147px; height:30px;  display:block; overflow:hidden; float:left;"-->
+           <dl>
+            <dt>
+             <a href="/university/college_ic/college_intro.jsp" title="(대학)메디컬캠퍼스">
+              <img alt="(대학)메디컬캠퍼스" src="/images/gnb/uni_gnb02.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="http://medicine.gachon.ac.kr/index.php" target="_blank">
+              의과대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college_ic/pharmacy_intro.jsp ">
+              약학대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college_ic/nursing_intro.jsp">
+              간호대학
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/college_ic/volunteer_intro.jsp ">
+              보건과학대학
+             </a>
+            </dd>
+            <dd>
+             <img alt="경계분할" src="/images/gnb/line.png"/>
+             .
+            </dd>
+            <!--dd><a href="/university/college_ic/business_ic_intro.jsp ">경상학부</a></dd>
+									<dd><a href="/university/college_ic/life_ic_intro.jsp ">생명과학부</a></dd>
+									<dd><a href="/university/college_ic/health_ic_intro.jsp ">보건과학부</a></dd>
+									<dd><a href="/university/college_ic/media_ic_intro.jsp ">의료공학부</a></dd> 
+									<dd><a href="/university/college_ic/ie_ic_intro.jsp ">정보공학부</a></dd>
+									<dd><a href="/university/college_ic/physical_ic_intro.jsp ">체육과학부</a></dd-->
+            <dd>
+             <a href="/university/college_ic/liberal_ic_intro.jsp ">
+              가천리버럴아츠칼리지(M)
+             </a>
+            </dd>
+           </dl>
+           <dl style="width:158px; overflow:hidden; float:left;">
+            <dt>
+             <a href="/university/postgraduate/general_intro.jsp">
+              <img alt="(대학원)글로벌캠퍼스" src="/images/gnb/uni_gnb03.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/major2/ilban/index.jsp" target="_blank">
+              일반대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/postgraduate/business.jsp">
+              경영대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="/major2/kusc/index.jsp" target="_blank">
+              교육대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="/major2/kp/index.jsp" target="_blank">
+              사회정책대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/postgraduate/industry.jsp">
+              산업환경대학원
+             </a>
+            </dd>
+            <!--<dd><a href="/university/postgraduate/design.jsp">디자인대학원</a></dd>-->
+            <!--dd><a href="/university/postgraduate/sports.jsp">스포츠문화대학원</a></dd-->
+            <dd>
+             <a href="/major2/therapy/main/index.jsp" target="_blank">
+              특수치료대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/postgraduate/game.jsp">
+              게임대학원
+             </a>
+            </dd>
+            <!--dd><a href="/university/postgraduate/gshb.jsp">보건대학원(건강뷰티전공)</a></dd-->
+            <dd>
+             <a href="/university/postgraduate/prospectus.jsp">
+              모집요강
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/postgraduate/application.jsp">
+              입학원서및학업(연구)계획서
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/university/postgraduate_ic/general_intro.jsp" title="새창열림">
+              <img alt="(대학원)메디컬캠퍼스" src="/images/gnb/uni_gnb04.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/major2/graduate/main/index.jsp">
+              일반대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/postgraduate_ic/mg_intro01.jsp">
+              의학전문대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/postgraduate_ic/intro_health.jsp">
+              보건대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/postgraduate_ic/intro_nursing.jsp">
+              간호대학원
+             </a>
+            </dd>
+            <dd>
+             <a href="http://gaihst.gachon.ac.kr/" target="_blank">
+              가천융합의과학원
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/university/ganghwa/hawaii_intro.jsp">
+              <img alt="가천리더십센터" src="/images/gnb/uni_gnb05.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/university/ganghwa/hawaii_intro.jsp">
+              하와이가천글로벌센터
+             </a>
+            </dd>
+            <dd>
+             <a href="/university/ganghwa/ganghwa_intro.jsp">
+              가천리더십센터
+             </a>
+            </dd>
+           </dl>
+          </div>
+         </div>
+        </li>
+        <li class="gnb4">
+         <a class="d1" href="http://www.gachon.ac.kr/research/laboratory/01.jsp">
+          <img alt="연구 산학" class="png24" src="/images/gnb/gnb04_off.png"/>
+         </a>
+         <div class="gnbsub">
+          <div class="inner">
+           <dl>
+            <dt>
+             <a href="https://gcurnd.gachon.ac.kr:8443/exsignon/sso/sso_index.jsp" target="_blank">
+              <img alt="산학협력단 홈페이지 바로가기" src="/images/gnb/research_gnb01.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="https://gcurnd.gachon.ac.kr:8443/exsignon/sso/sso_index.jsp" target="_blank">
+              산학협력단 홈페이지
+             </a>
+            </dd>
+            <dd>
+             <a href="https://gcurnd.gachon.ac.kr:8443/community/register-write.jsp" target="_blank">
+              산학협력단 e-신문고
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="https://gusanhak.gachon.ac.kr/exsignon/sso/sso_index.jsp  " target="_blank" title="새창으로열림">
+              <img alt="연구서비스" src="/images/gnb/research_gnb06.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="https://gusanhak.gachon.ac.kr/exsignon/sso/sso_index.jsp  " target="_blank" title="">
+              산단통합관리시스템
+             </a>
+            </dd>
+            <dd>
+             <a href="https://gusanhak.gachon.ac.kr/exsignon/sso/sso_index.jsp  " target="_blank" title="">
+              연구지원관리시스템
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/research/center/01.jsp">
+              <img alt="연구소안내" src="/images/gnb/research_gnb02.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/research/center/01.jsp">
+              부속·부설연구기관
+             </a>
+            </dd>
+            <dd>
+             <a href="/research/center/02.jsp">
+              연구처부설연구소
+             </a>
+            </dd>
+           </dl>
+          </div>
+         </div>
+        </li>
+        <li class="gnb5">
+         <a class="d1" href="/affairs/info/03.jsp">
+          <img alt="학사안내" class="png24" src="/images/gnb/gnb05_off.png"/>
+         </a>
+         <div class="gnbsub">
+          <div class="inner">
+           <dl>
+            <dt>
+             <a href="/affairs/info/03.jsp">
+              <img alt="학사정보" src="/images/gnb/affairs_gnb01.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/affairs/info/02.jsp?boardType_seq=395">
+              학사일정
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/info/03.jsp">
+              학사안내
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/info/04.jsp?boardType_seq=341">
+              학사FAQ
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/info/05.jsp?boardType_seq=342">
+              학사Q&amp;A
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/info/12.jsp?boardType_seq=814">
+              P학기제 안내
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/info/09.jsp?boardType_seq=782">
+              P학기제FAQ
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/info/10.jsp?boardType_seq=783">
+              P학기제Q&amp;A
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/info/11.jsp">
+              융합전공
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/info/06.jsp?boardType_seq=343">
+              서식다운로드
+             </a>
+            </dd>
+            <!--dd><a href="/affairs/info/07.jsp">편의업무안내</a></dd-->
+           </dl>
+           <dl>
+            <dt>
+             <a href="/affairs/scholar/01.jsp">
+              <img alt="장학" src="/images/gnb/affairs_gnb02.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/affairs/scholar/01.jsp">
+              장학안내
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/scholar/03.jsp?boardType_seq=344">
+              장학 FAQ
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/scholar/04.jsp?boardType_seq=345">
+              장학 Q&amp;A
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/scholar/07.jsp?boardType_seq=760">
+              합격수기
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/scholar/05.jsp">
+              편의업무안내
+             </a>
+            </dd>
+            <dd>
+             <a href="http://nanum.gachon.ac.kr" target="_blank">
+              장애학생지원센터
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/affairs/tuition/01.jsp?boardType_seq=796">
+              <img alt="등록금" src="/images/gnb/affairs_gnb07.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/affairs/tuition/01.jsp?boardType_seq=796">
+              수납일정
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/tuition/02.jsp">
+              수납안내
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/tuition/03.jsp">
+              고지서출력
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/tuition/04.jsp">
+              증명서출력
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/tuition/05.jsp?boardType_seq=341&amp;branch=14">
+              등록금FAQ
+             </a>
+            </dd>
+            <!--dd><a href="/affairs/tuition/06.jsp?boardType_seq=779">등록금Q&A</a></dd-->
+            <dd>
+             <a href="/affairs/tuition/07.jsp?boardType_seq=780">
+              서식다운로드
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/affairs/job/01.jsp" target="_blank" title="새창열림">
+              <img alt="취업" src="/images/gnb/affairs_gnb03.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="https://work.gachon.ac.kr/exsignon/sso/sso.php " target="_blank" title="새창열림">
+              취업안내
+             </a>
+            </dd>
+            <!--dd><a href="/affairs/job/01.jsp" target="_blank" title="새창열림">취업안내(메디컬)</a></dd-->
+           </dl>
+           <!--dl>
+								<dt><a href="/affairs/military/01.jsp"><img src="/images/gnb/affairs_gnb04.gif"  alt="병무"/></a></dt>
+									<dd><a href="/affairs/military/01.jsp">연대본부소개</a></dd>
+					 				<dd><a href="/affairs/military/02.jsp">학생징병검사안내</a></dd>
+									<dd><a href="/affairs/military/03.jsp">학생입영연기</a></dd>
+									<dd><a href="/affairs/military/04.jsp">재학생입영출원</a></dd>
+									<dd><a href="/affairs/military/05.jsp">학생민방위훈련면제</a></dd>
+									<dd><a href="/affairs/military/06.jsp">군대제대후복학절차</a></dd>
+									<dd><a href="/affairs/military/07.jsp">학생예비군훈련혜택</a></dd> 
+									<dd><a href="/affairs/military/08.jsp">전문연구요원제도안내</a></dd>
+									<dd><a href="/affairs/military/09.jsp">육해공군장병시험지원안내</a></dd>
+									<dd><a href="/affairs/military/10.jsp">국외여행 및 유학신고 안내</a></dd>
+									<!--dd><a href="/affairs/military/11.jsp?boardType_seq=347">병무 FAQ</a></dd>
+							</dl-->
+           <dl>
+            <dt>
+             <a href="/affairs/exchange/01.jsp">
+              <img alt="국제교류" src="/images/gnb/affairs_gnb05.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/affairs/exchange/01.jsp">
+              국제교류프로그램
+             </a>
+            </dd>
+            <dd>
+             <a href="/affairs/exchange/02.jsp">
+              교류대학소개
+             </a>
+            </dd>
+            <!--dd><a href="/affairs/exchange/03.jsp?boardType_seq=349">커뮤니케이션</a></dd>
+									<dd><a href="/affairs/exchange/04.jsp?boardType_seq=352">해외교육체험기</a></dd-->
+            <dd>
+             <a href="http://oia.gachon.ac.kr" target="_blank">
+              International Students
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/community/counsel/01.jsp">
+              <img alt="학생상담" src="/images/gnb/community_gnb03.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/community/counsel/01.jsp">
+              가천인권센터 소개
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/counsel/02.jsp">
+              학생상담실 이용안내
+             </a>
+            </dd>
+            <dd>
+             <a href="https://naete.gachon.ac.kr/ko/counsel/student/online">
+              상담 및 심리검사 신청
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/counsel/08.jsp?boardType_seq=393">
+              공지사항
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/counsel/07.jsp">
+              양성평등상담실
+             </a>
+            </dd>
+            <!--<dd><a href="/community/counsel/02.jsp?boardType_seq=391">좋은 글과 시</a></dd>
+									<dd><a href="/community/counsel/04.jsp?boardType_seq=393">공지사항</a></dd>
+									<dd><a href="/community/counsel/05.jsp?boardType_seq=394">학생상담FAQ</a></dd>-->
+           </dl>
+          </div>
+         </div>
+        </li>
+        <!--li class="gnb6"><a class="d1" href="https://www.gachon.ac.kr/site/login.jsp?return_url=http://gcis.gachon.ac.kr/sso/login.jsp" target="_blank" title="새창열림" ><img src="/images/gnb/gnb06_off.png" class="png24"  alt="학사행정"/></a></li-->
+        <!--li class="gnb6"><a class="d1" href="#" target="_blank" onclick="otp();return false;" title="새창열림" ><img src="/images/gnb/gnb06_off.png" class="png24"  alt="학사행정"/></a></li-->
+        <!--li class="gnb6"><a class="d1" href="#" target="_blank" onclick="otp();return false;" title="새창열림" ><img src="/images/gnb/gnb06_off.png" class="png24"  alt="학사행정"/></a></li-->
+        <li class="gnb8">
+         <a class="d1">
+          <img alt="학사행정" class="png24" src="/images/gnb/gnb06_off.png"/>
+         </a>
+         <div class="gnbsub">
+          <div class="inner">
+           <dl>
+            <dt>
+             <img alt="학사행정시스템" src="/images/gnb/info_gnb01.gif"/>
+            </dt>
+            <dd>
+             <a href="#" onclick="otp_tomato();return false;" title="학사행정(웹표준)(학생/교원/직원) 새창열림">
+              학사행정(웹표준)
+             </a>
+            </dd>
+            <dd>
+             <img alt="경계분할" src="/images/gnb/line.png"/>
+             .
+            </dd>
+            <dd>
+             <a href="#" onclick="otp_tomato('former');return false;" title="학사행정(직원) 새창열림">
+              학사행정(직원)
+             </a>
+            </dd>
+           </dl>
+          </div>
+         </div>
+        </li>
+        <li class="gnb7">
+         <a class="d1" href="/community/opencampus/03.jsp?boardType_seq=358">
+          <img alt="커뮤니티" class="png24" src="/images/gnb/gnb07_off.png"/>
+         </a>
+         <div class="gnbsub">
+          <div class="inner">
+           <dl style="width:116px; overflow:hidden; float:left;">
+            <dt>
+             <a href="/community/opencampus/03.jsp?boardType_seq=358">
+              <img alt="열린캠퍼스" src="/images/gnb/community_gnb02.gif"/>
+             </a>
+            </dt>
+            <!--<dd><a href="/community/opencampus/01.jsp">학생자치기구</a></dd>
+									<dd><a href="/community/opencampus/02.jsp">동아리소개</a></dd>-->
+            <dd>
+             <a href="/community/opencampus/03.jsp?boardType_seq=358">
+              공지사항
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/04.jsp?boardType_seq=359">
+              가천뉴스
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/05.jsp?boardType_seq=360">
+              행사소식
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/06.jsp?boardType_seq=340">
+              학사소식
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/07.jsp?boardType_seq=361">
+              장학소식
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/19.jsp?boardType_seq=773">
+              취업소식
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/15.jsp?boardType_seq=530">
+              학생소식
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/08.jsp?boardType_seq=362">
+              교수상조회
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/09.jsp?boardType_seq=363">
+              직원상조회
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/10.jsp?boardType_seq=364">
+              토론광장
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/11.jsp?boardType_seq=365">
+              공개자료실
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/12.jsp?boardType_seq=366">
+              가천장터
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/opencampus/13.jsp?boardType_seq=368">
+              주변정보
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/openinfo/01.jsp">
+              정보공개
+             </a>
+            </dd>
+           </dl>
+           <dl>
+            <dt>
+             <a href="/community/praise/01.jsp">
+              <img alt="커뮤니티" src="/images/gnb/community_gnb04.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/community/corona/01.jsp?boardType_seq=797">
+              코로나19공지사항
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/hiring/04.jsp?boardType_seq=775">
+              계약직채용
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/hiring/02.jsp?boardType_seq=738">
+              조교채용
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/life/01.jsp">
+              가천라이프
+             </a>
+            </dd>
+            <dd>
+             <a href="http://cafe.gachon.ac.kr/exsignon/sso/sso_index.jsp">
+              카페
+             </a>
+            </dd>
+            <dd>
+             <a href="http://www.gachon.ac.kr/community/webhard/01.jsp">
+              웹하드
+             </a>
+            </dd>
+            <!--dd><a href="https://www.gachon.ac.kr/pop_webhard1.html" onclick="window.open(this.href,'intro','width=400,height=321,top=0,left=100,scrollbars=no,menubar=no,toolbar=no,status=no');return false;">웹하드</a></dd-->
+            <dd>
+             <a href="/community/homepage/01.jsp">
+              홈페이지광장
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/praise/01.jsp">
+              칭찬마당
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/survey/01.jsp">
+              설문조사
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/survey/02.jsp">
+              온라인 POLL
+             </a>
+            </dd>
+            <dd>
+             <a href="https://www.gachon.ac.kr/community/sinmungo/01_nice.jsp">
+              가천 옴부즈
+             </a>
+            </dd>
+            <dd>
+             <a href="/community/cleanworld/main.jsp">
+              청탁금지법
+             </a>
+            </dd>
+            <!--dd><a href="/community/gachon2025/2025.jsp?boardType_seq=703">가천2025프로젝트</a></dd-->
+           </dl>
+           <dl>
+            <dt>
+             <a href="/affairs/remote/01.jsp">
+              <img alt="사이버캠퍼스" src="/images/gnb/affairs_gnb06.gif"/>
+             </a>
+            </dt>
+            <dd>
+             <a href="/affairs/remote/01.jsp">
+              소개
+             </a>
+            </dd>
+           </dl>
+          </div>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <!--head-->
+     </div>
+     <!--//gnb-->
+    </div>
+    <!--//header-->
+    <script type="text/javascript">
+     //----------------------------------------
+	// 팝업 오픈시 주석해제
+	//----------------------------------------
+	function openMail(){
+		//window.open('/pop_webmail.html', 'web_120801', 'left=460,top=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=yes,width=540,height=670');
+	}
+    </script>
+    <hr/>
+    <p class="title">
+     <img alt="가천대 로고" class="png24" src="/images/common/sub_title_all.png"/>
+    </p>
+    <!--//left//-->
+    <div id="container">
+     <div id="snb">
+      <div class="left">
+       <h3>
+        <img alt="열린캠퍼스" src="/images/snb/h3_opencampus.gif"/>
+       </h3>
+       <ul class="depth2">
+        <!--<li><a href="/community/opencampus/01.jsp" ><img src="/images/snb/snb_opencampus_1.gif" alt="학생자치기구" /></a></li>
+                <li><a href="/community/opencampus/02.jsp" ><img src="/images/snb/snb_opencampus_2.gif" alt="동아리소개" /></a></li>-->
+        <li>
+         <a href="/community/opencampus/03.jsp?boardType_seq=358">
+          <img alt="공지사항" src="/images/snb/snb_opencampus_3_on.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/04.jsp?boardType_seq=359">
+          <img alt="가천뉴스" src="/images/snb/snb_opencampus_4.gif"/>
+         </a>
+        </li>
+        <!--li><a href="/community/opencampus/04.jsp?boardType_seq=359" ><img src="/images/snb/snb_opencampus_4.gif" alt="가천뉴스" /></a>-->
+        <li>
+         <a href="/community/opencampus/05.jsp?boardType_seq=360">
+          <img alt="행사소식" src="/images/snb/snb_opencampus_5.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/06.jsp?boardType_seq=340">
+          <img alt="학사소식" src="/images/snb/snb_opencampus_6.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/07.jsp?boardType_seq=361">
+          <img alt="장학소식" src="/images/snb/snb_opencampus_7.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/19.jsp?boardType_seq=773">
+          <img alt="취업소식" src="/images/snb/snb_opencampus_19.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/15.jsp?boardType_seq=530">
+          <img alt="학생소식" src="/images/snb/snb_opencampus_15.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/20.jsp?boardType_seq=823">
+          <img alt="입학소식" src="/images/snb/snb_opencampus_20.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/hiring/04.jsp?boardType_seq=775">
+          <img alt="계약직채용" src="/images/snb/snb_opencampus_17.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/hiring/02.jsp?boardType_seq=738">
+          <img alt="조교채용" src="/images/snb/snb_opencampus_16.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/08.jsp?boardType_seq=362">
+          <img alt="교수상조회" src="/images/snb/snb_opencampus_8.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/09.jsp?boardType_seq=363">
+          <img alt="직원상조회" src="/images/snb/snb_opencampus_9.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/10.jsp?boardType_seq=364">
+          <img alt="토론광장" src="/images/snb/snb_opencampus_10.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/11.jsp?boardType_seq=365">
+          <img alt="공개자료실" src="/images/snb/snb_opencampus_11.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="/community/opencampus/12.jsp?boardType_seq=366">
+          <img alt="가천장터" src="/images/snb/snb_opencampus_12.gif"/>
+         </a>
+        </li>
+        <!--li><a href="/community/opencampus/13.jsp?boardType_seq=368" ><img src="/images/snb/snb_opencampus_13.gif" alt="주변정보" /></a></li-->
+       </ul>
+       <div class="bottom">
+       </div>
+      </div>
+      <!--//left-->
+     </div>
+     <!--//snb-->
+     <div id="content">
+      <div class="summary">
+       <h4>
+        <img alt="공지사항" src="/images/tit/h4_opencampus_3.gif"/>
+       </h4>
+       <ul>
+        <li>
+         <a href="/">
+          <img alt="홈으로" src="/images/common/icon_home.gif"/>
+         </a>
+        </li>
+        <li>
+         &gt; 커뮤니티
+        </li>
+        <li>
+         &gt; 열린캠퍼스
+        </li>
+        <li>
+         &gt;
+         <strong>
+          공지사항
+         </strong>
+        </li>
+       </ul>
+      </div>
+      <script type="text/javascript">
+       //테스트 2016-10-05
+//토탈 : 9609
+function fnSearchCheck(){
+    if(document.searchFrm.searchword.value==""){
+        alert("검색어를 입력하세요");
+        return false;
+    }
+    return true;
+}
+// 선택된 글 삭제하기
+function fnStateSubmit(temp,temp1){
+
+    alert("권한이 없습니다.");
+    return;
+
+}
+      </script>
+      <div class="tab">
+       <ul>
+        <li>
+         <a href="03.jsp?boardType_seq=358&amp;branch=">
+          <img alt="전체" src="/images/community/tab_t_on.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="03.jsp?boardType_seq=358&amp;branch=1">
+          <img alt="공통" src="/images/community/tab_ki_off.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="03.jsp?boardType_seq=358&amp;branch=2">
+          <img alt="경원" src="/images/community/tab_k_off.gif"/>
+         </a>
+        </li>
+        <li>
+         <a href="03.jsp?boardType_seq=358&amp;branch=3">
+          <img alt="인천" src="/images/community/tab_i_off.gif"/>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <!--//tab-->
+      <div class="search">
+       <div class="total">
+        <strong>
+         전체페이지
+        </strong>
+        9609 (1/481 page)
+       </div>
+       <!--//total-->
+       <form action="03.jsp" method="get" name="searchFrm" onsubmit="return fnSearchCheck();">
+        <input name="pageNum" type="hidden" value="0"/>
+        <input name="pageSize" type="hidden" value="20"/>
+        <input name="delYn" type="hidden" value="N"/>
+        <input name="approve" type="hidden" value=""/>
+        <input name="answer" type="hidden" value=""/>
+        <input name="secret" type="hidden" value=""/>
+        <input name="boardType_seq" type="hidden" value="358"/>
+        <label class="hide" for="cho01">
+         검색항목선택
+        </label>
+        <select id="cho01" name="searchopt">
+         <option value="title">
+          제목
+         </option>
+         <option value="name">
+          작성자
+         </option>
+         <option value="content">
+          내용
+         </option>
+        </select>
+        <label class="hide" for="txt">
+         검색어 입력창
+        </label>
+        <input class="ip" id="txt" name="searchword" type="text" value=""/>
+        <input alt="검색" class="img" src="/images/skin/board/btn_search.gif" type="image"/>
+       </form>
+      </div>
+      <!--//search-->
+      <form action="/board/board_list_action.jsp" method="post" name="listFrm">
+       <input name="returnUrl" type="hidden" value="/community/opencampus/03.jsp"/>
+       <input name="boardType_seq" type="hidden" value="358"/>
+       <input name="actionType" type="hidden" value=""/>
+       <input name="actionValue" type="hidden" value=""/>
+       <input alt="확인" style="display:none;" type="image"/>
+       <div class="boardlist">
+        <table summary="번호,제목,작성자,작성일,조회수,첨부,답변현황의 대한 내용을 보실 수 있습니다.">
+         <caption>
+          게시판
+         </caption>
+         <colgroup>
+          <col width="7%"/>
+          <col/>
+          <col width="7%"/>
+          <col width="12%"/>
+          <col width="8%"/>
+         </colgroup>
+         <thead>
+          <tr>
+           <th scope="col">
+            번호
+           </th>
+           <th scope="col">
+            제목
+           </th>
+           <th scope="col">
+            첨부
+           </th>
+           <th scope="col">
+            작성일
+           </th>
+           <th scope="col">
+            조회수
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>
+            <img alt="공지" src="/images/skin/board/icon_notice.gif"/>
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10438&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             <!--구분자 : " + 공통-->
+             [공통]  2021-1학기 학습전략워크숍(학습법 특강)
+            </a>
+            <img alt="new" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            455
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <img alt="공지" src="/images/skin/board/icon_notice.gif"/>
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10429&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             <!--구분자 : " + 공통-->
+             [공통]  2021학년도 후기 일반대학원 신(편)입생 모집 안내
+            </a>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-07
+           </td>
+           <td>
+            1233
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <img alt="공지" src="/images/skin/board/icon_notice.gif"/>
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10259&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             <!--구분자 : " + 공통-->
+             [공통]  2021년 가천 스탬프 투어 운영 안내
+            </a>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-03-12
+           </td>
+           <td>
+            11295
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <img alt="공지" src="/images/skin/board/icon_notice.gif"/>
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10168&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             <!--구분자 : " + 공통-->
+             [공통]  2021-1학기 수업운영 기준 안내
+            </a>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-02-16
+           </td>
+           <td>
+            39267
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9609
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10457&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  2021 성남시 청년 전공살리기(전공하JOB!) 현장실습 참여자 모집 안...
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-13
+           </td>
+           <td>
+            763
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9608
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10456&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  [IPP] 단기(하계)+IPP장기현장실습 실습생모집_(주)펀앤쇼핑
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-13
+           </td>
+           <td>
+            343
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9607
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10455&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  가천대학교 「초기창업패키지」 창업동아리 지원사업 추가모집 안내
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-13
+           </td>
+           <td>
+            187
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9606
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10454&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  아시아문화 융합전공 학생모집
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-13
+           </td>
+           <td>
+            233
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9605
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10453&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  [교육혁신팀] '대학혁신지원사업 융합전공' 진입생 모집
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-12
+           </td>
+           <td>
+            596
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9604
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10452&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  2021학년도 하계 계절학기 대진대학교 학점교류 안내
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-12
+           </td>
+           <td>
+            65
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9603
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10451&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [글로벌]  [가천인권센터] 2021 마음이음(또래상담자 양성프로그램) 기본과정...
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-12
+           </td>
+           <td>
+            522
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9602
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10450&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [글로벌]  2021학년도 과학영재교육원 사회봉사자 모집공고(단기)
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-12
+           </td>
+           <td>
+            359
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9601
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10449&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  게임산업 관련 온라인 특강 [게임진로공략.ZIP] 안내
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            495
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9600
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10448&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  [IPP] 단기+IPP장기현장실습 실습생모집_인베니아(주)
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            899
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9599
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10447&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  에듀스 취업솔루션 이용 안내
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            436
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9598
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10446&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  온라인 IT 자격증 강좌 운영 안내
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            908
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9597
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10445&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  잡플래닛 서비스 활용 안내
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            520
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9596
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10444&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  AI 면접 분석기 활용 안내
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            320
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9595
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10443&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  AI 자기소개서 분석기 활용 안내
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            370
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9594
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10442&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  가천리더십 2021-하계 토익스피킹캠프 모집
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            294
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9593
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10441&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  가천리더십 2021-하계 토익캠프 모집
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+            <img alt="첨부파일" src="/images/skin/board/icon_file.gif"/>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            507
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9592
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10440&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  [아르테크네센터] 2021 공모전 #06_나의 학과는
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            817
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9591
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10439&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  [아르테크네센터] 2021 프로젝트 #5_가천고시 TALL-Gate
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            1813
+           </td>
+          </tr>
+          <tr>
+           <td>
+            9590
+           </td>
+           <td class="tl">
+            <a href="03.jsp?mode=view&amp;boardType_seq=358&amp;board_no=10438&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=20&amp;pageNum=0">
+             [공통]  2021-1학기 학습전략워크숍(학습법 특강)
+            </a>
+            <img alt="새로운 글" src="/images/skin/board/icon_new.gif"/>
+           </td>
+           <td>
+           </td>
+           <td>
+            2021-05-11
+           </td>
+           <td>
+            455
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <!--//boardlist-->
+       <input alt="확인" class="hide" type="image"/>
+      </form>
+      <div class="p_total">
+       <form action="03.jsp" method="get" name="pageSizeFrm">
+        <input name="pageNum" type="hidden" value="0"/>
+        <input name="delYn" type="hidden" value="N"/>
+        <input name="searchword" type="hidden" value=""/>
+        <input name="searchopt" type="hidden" value=""/>
+        <input name="approve" type="hidden" value=""/>
+        <input name="secret" type="hidden" value=""/>
+        <input name="answer" type="hidden" value=""/>
+        <input name="branch" type="hidden" value=""/>
+        <input name="boardType_seq" type="hidden" value="358"/>
+        <label class="hide" for="output">
+         게사판출력갯수 선택
+        </label>
+        <select id="output" name="pageSize">
+         <option value="10">
+          10
+         </option>
+         <option selected="selected" value="20">
+          20
+         </option>
+         <option value="30">
+          30
+         </option>
+         <option value="40">
+          40
+         </option>
+         <option value="50">
+          50
+         </option>
+        </select>
+        <input alt="확인" class="img" src="/images/skin/board/btn_s_ok.gif" type="image"/>
+       </form>
+      </div>
+      <!--//p_total-->
+      <div class="btn_list">
+       <div class="fl">
+       </div>
+       <!--//fl-->
+      </div>
+      <!--//btn_list-->
+      <div class="pagelist">
+       <div class="page">
+        <a href="#none" style="cursor:default;">
+         <img alt="처음" src="/images/board/btn_prev_end.gif"/>
+        </a>
+        <a href="#none" style="cursor:default;">
+         <img alt="이전" src="/images/board/btn_prev.gif"/>
+        </a>
+        <strong>
+         1
+        </strong>
+        <a href="03.jsp?pageNum=1&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         2
+        </a>
+        <a href="03.jsp?pageNum=2&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         3
+        </a>
+        <a href="03.jsp?pageNum=3&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         4
+        </a>
+        <a href="03.jsp?pageNum=4&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         5
+        </a>
+        <a href="03.jsp?pageNum=5&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         6
+        </a>
+        <a href="03.jsp?pageNum=6&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         7
+        </a>
+        <a href="03.jsp?pageNum=7&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         8
+        </a>
+        <a href="03.jsp?pageNum=8&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         9
+        </a>
+        <a href="03.jsp?pageNum=9&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         10
+        </a>
+        <a href="03.jsp?pageNum=10&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         <img alt="다음" src="/images/board/btn_next.gif"/>
+        </a>
+        <a href="03.jsp?pageNum=480&amp;pageSize=20&amp;boardType_seq=358&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=">
+         <img alt="끝" src="/images/board/btn_next_end.gif"/>
+        </a>
+       </div>
+      </div>
+      <!--//pagelist-->
+      <iframe frameborder="0" height="0" id="hiddenFrame" name="hiddenFrame" style="display:none;" title="hiddenFrame" width="0">
+      </iframe>
+     </div>
+     <!--//content-->
+     <!--//footer//-->
+    </div>
+    <!--//container-->
+   </div>
+   <!--//wrap-->
+  </div>
+  <!--//wrap_box-->
+  <div class="footer_wrap">
+   <div id="footer">
+    <ul>
+     <li>
+      <a href="/site/info_protection.jsp">
+       <img alt="개인정보처리방침" class="png24" src="/images/common/foot01.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="/community/openinfo/05.jsp">
+       <img alt="개인정보공시" class="png24" src="/images/common/foot08_3.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="/site/morals.jsp">
+       <img alt="네티즌윤리경영" class="png24" src="/images/common/foot02.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="/gumea/main/index.jsp" target="_blank" title="새창열기">
+       <img alt="구매입찰" class="png24" src="/images/common/foot03.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="http://www.gachon.ac.kr/introduce/foundation/03.jsp?mode=view&amp;boardType_seq=324&amp;board_no=84&amp;approve=&amp;secret=&amp;answer=&amp;branch=&amp;searchopt=&amp;searchword=&amp;pageSize=10&amp;pageNum=0">
+       <img alt="예산공고" class="png24" src="/images/common/foot04.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="/introduce/foundation/03.jsp?boardType_seq=324">
+       <img alt="결산공고" class="png24" src="/images/common/foot05.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="http://ebill.kyungwon.ac.kr:10000/dti/dti_sbms_login.asp" target="_blank" title="새창열림">
+       <img alt="전자세금계산서" class="png24" src="/images/common/foot10.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="/introduce/gachon/09.jsp?boardType_seq=521">
+       <img alt="대학자체평가" class="png24" src="/images/common/foot06.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="/community/sinmungo/01.jsp">
+       <img alt="가천 옴부즈(Gachon Ombuds)(구)사이버신문고" class="png24" src="/images/common/foot07_2.png"/>
+      </a>
+     </li>
+     <li>
+      <a href="/etc/rssview.jsp" onclick="window.open(this.href,'rssview','status=yes,scrollbars=no,resizable=yes,width=650,height=840');return false;">
+       <img alt="RSS" class="png24" src="/images/common/foot09.png"/>
+      </a>
+     </li>
+    </ul>
+    <form action="/action.jsp" name="portalFooterUrlFrm" onsubmit="return fnPortalFooterQuickUrl();" target="_blank">
+     <div class="foot_left">
+      <p class="logo">
+       <a href="#none">
+        <img alt="가천대학교" class="png24" src="/images/common/foot_logo.png"/>
+       </a>
+      </p>
+      <address>
+       <img alt="글로벌캠퍼스 (461-701)경기도 성남시 수정구 성남대로 1342(구 복정동 산65번지) TEL.031-750-5114" class="png24" src="/images/common/address01.png"/>
+       <img alt="메디컬캠퍼스  (406-799)메디컬캠퍼스  (406-799)인천광역시 연수구 함박뫼로 191 TEL. 032-820-4000" class="png24" src="/images/common/address03.png"/>
+      </address>
+      <span>
+       Copyright 2011 by
+       <em>
+        Gachon University
+       </em>
+       all rights reserved
+      </span>
+      <label class="hide" for="f_select">
+       주요기관 바로가기
+      </label>
+      <select id="f_select" name="portalFooterLinkUrl">
+       <option value="">
+        주요기관 바로가기
+       </option>
+       <option value="http://www.gachon.ac.kr/introduce/university/05_06_02.jsp">
+        가천교육방송국
+       </option>
+       <option value="http://www.i-kwup.com/">
+        가천대신문사
+       </option>
+       <option value="http://gbri.gachon.ac.kr/">
+        가천바이오나노연구원
+       </option>
+       <option value="http://myhome.gachon.ac.kr/rotc">
+        가천대학교학군단(ROTC)
+       </option>
+       <option value="http://gaihst.gachon.ac.kr/">
+        가천융합의과학원
+       </option>
+       <option value="http://ace.gachon.ac.kr/gicc/index">
+        가천창조융합원
+       </option>
+       <option value="http://gachonkmgil.com/">
+        가천한의대 부속한방병원
+       </option>
+       <option value="http://myhome.gachon.ac.kr/abeek/">
+        공학교육혁신센터
+       </option>
+       <option value="http://isay.gachon.ac.kr">
+        과학영재교육원
+       </option>
+       <option value="http://ace.gachon.ac.kr/aims">
+        교육과정평가인증원
+       </option>
+       <option value="http://www.gachon.ac.kr/introduce/university/05_06_04.jsp">
+        교지편집실
+       </option>
+       <option value="http://www.gachon.ac.kr/gumea/">
+        구매관재팀
+       </option>
+       <option value="http://www.gachon.ac.kr/introduce/university/03_16.jsp">
+        국제교류처
+       </option>
+       <option value="http://myhome.gachon.ac.kr/gilc/">
+        국제어학원
+       </option>
+       <option value="http://www.gachon.ac.kr/introduce/university/05_16.jsp">
+        기숙사
+       </option>
+       <option value="http://www.gachon.ac.kr/introduce/university/03_04_04.jsp">
+        보건실
+       </option>
+       <!--option value="http://gcurnd.gachon.ac.kr/">산학협력단</option-->
+       <option value="http://www.gachon.ac.kr/introduce/university/05_05.jsp">
+        아름샘봉사단
+       </option>
+       <option value="http://www.gachon.ac.kr/introduce/university/05_06_03.jsp">
+        영자신문사
+       </option>
+       <option value="http://www.gatei.or.kr">
+        예술영재교육원
+       </option>
+       <option value="http://www.gachon.ac.kr/introduce/university/05_02.jsp">
+        전산정보원
+       </option>
+       <option value="http://www.gachon.ac.kr/introduce/university/05_01.jsp">
+        중앙도서관
+       </option>
+       <option value="http://gcubi.gachon.ac.kr">
+        창업보육센터
+       </option>
+       <option value="http://startup.gachon.ac.kr">
+        창업지원단
+       </option>
+       <option value="http://work.gachon.ac.kr/">
+        취업지원팀
+       </option>
+       <option value="http://global.gachon.ac.kr">
+        평생교육원
+       </option>
+       <option value="http://www.gachon.ac.kr/community/counsel/01.jsp">
+        학생종합상담센터
+       </option>
+       <option value="http://oia.gachon.ac.kr/international/a/m/klecInfo.do">
+        한국어교육센터
+       </option>
+       <!--option value="http://abeek.gachon.ac.kr/intro/include/index.do">ABEEK시스템</option>
+					<option value="http://ace.gachon.ac.kr">ACE사업단</option-->
+       <option value="http://www.gachon.ac.kr/lincplus">
+        LINC+사업단
+       </option>
+       <option value="http://sw.gachon.ac.kr">
+        SW중심대학사업단
+       </option>
+      </select>
+      <a class="img png24" href="#" id="urlgo">
+       <img alt="선택한 기관으로 이동" src="/images/common/btn_go.png"/>
+      </a>
+      <!--				<input type="image" alt="이동" class="img png24" src="/images/common/btn_go.png" />-->
+     </div>
+     <!--//foot_left-->
+    </form>
+    <div class="foot_left">
+     <p class="qr">
+      <br/>
+      <a href="http://www.facebook.com/GachonUniversity" target="_blank">
+       <img alt="페이스북" class="vb" src="/images/common/foot_facebook.png"/>
+      </a>
+      <a href="http://www.Youtube.com/GachonUniversitypr" target="_blank">
+       <img alt="유투브" class="vb" src="/images/common/foot_youtube.png"/>
+      </a>
+      <a href="https://www.instagram.com/gachon_univ" target="_blank">
+       <img alt="인스타그램" class="vb" src="/images/common/foot_instagram.png"/>
+      </a>
+      <a href="https://blog.naver.com/gachonuni" target="_blank">
+       <img alt="블로그" class="vb" src="/images/common/foot_blog.png"/>
+      </a>
+      <!--img src="/images/common/foot_qr.png" alt="qr코드" class="png24"></p-->
+     </p>
+    </div>
+    <!--//foot_left-->
+   </div>
+   <!--//footer-->
+  </div>
+  <!--//footer_wrap-->
+  <script type="text/javascript">
+   $(document).ready(function(){
+	jQuery("#urlgo").click(function(){
+		if(jQuery("#f_select").val() == "")
+		{
+			alert('기관을 선택하세요');
+		}
+		else{
+			window.open(jQuery("#f_select").val(), "", "");
+		}
+	});
+});
+  </script>
+ </body>
+</html>
