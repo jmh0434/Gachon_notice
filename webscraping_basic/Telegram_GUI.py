@@ -10,6 +10,9 @@ token = '1647603576:AAFCHkO5MuXcB_0RJpLqXqROjKXFe0R6jfc'  # 봇 API 입력
 mc = '1826611044'  # 텔레그램 숫자 ID 입력
 bot = telepot.Bot(token)
 
+info_message = "공지사항 크롤링 챗봇"
+bot.sendMessage(mc, info_message)
+
 
 def btn_show(msg):
     if msg['text'] == "소환":
