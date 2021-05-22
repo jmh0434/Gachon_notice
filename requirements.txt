@@ -1,0 +1,1 @@
+python-telegram-bot \n beautifulsoup4 \n requests \n lxml
