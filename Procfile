@@ -1,1 +1,1 @@
-'worker:python Telegram_print.py 
+worker:python Telegram_print.py 
